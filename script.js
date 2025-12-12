@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Contact Form Submission (Prepared for GAS)
+    // Contact Form Submission (For GAS)
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -65,9 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.style.opacity = '0.7';
 
             // --- GOOGLE APPS SCRIPT INTEGRATION ---
-            // const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-            // fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
-            // .then(response => ...)
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzA_q_dUNeRPAqNVpmHtkNVNQYiE7cYtoc_EyIky1-R83OADKGZNeX7Uyq8D5KxNOb2NQ/exec';
+            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+            .then(response => {
+                console.log(response);
+            })
 
             // Simulation for now
             setTimeout(() => {
