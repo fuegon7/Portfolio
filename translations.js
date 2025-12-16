@@ -15,7 +15,7 @@ const translations = {
         profile_quote: "\"Nada es fijo, todo se construye según la sociedad avanza, lo que hace importante el aprendizaje constante\"",
         about_p1: "Soy un profesional especializado en el área de ASIR y DAM, adquiriendo conocimientos más allá de los estudios. He trabajado en el desarrollo de aplicaciones para llevar a cabo la digitalización de procesos y en el mantenimiento de sistemas y redes, algo que me hace sentir muy bien. Disfruto de trabajar en proyectos personales, por ahora estoy centrado en el ámbito del machine learning. ",
         about_p2: "Me considero una persona proactiva y flexible, que se puede integrar en grupos diferentes y resolver problemas de una manera creativa. Espero poder aportar mi experiencia a proyectos innovadores a la vez que sigo conociendo sobre estos.",
-        about_p3: "Aparte de la tecnología, me interesa la filosofía, la espeleología, la bicicleta y la realización de varios proyectos. Con esto, consigo estimular la creatividad y curiosidad, lo que me resulta motivador para seguir creciendo.",
+        about_p3: "Aparte de la tecnología, me interesa la filosofía, la espeleología, el pixelart y la realización de varios proyectos. Con esto, consigo estimular la creatividad y curiosidad, lo que me resulta motivador para seguir creciendo.",
         exp_years: "Años de experiencia",
         exp_projects: "Proyectos completados",
         exp_motivation: "Motivación",
