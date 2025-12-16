@@ -26,8 +26,8 @@ const translations = {
         cat_devops: "DevOps & Systems",
         cat_tools: "Tools",
         projects_title: "Executed Protocols",
-        proj_network: "Network Sentinel",
-        desc_network: "Sistema de monitoreo de red en tiempo real construido con Python y Websockets.",
+        proj_bot: "Discord Bot Shell",
+        desc_bot: "Bot de Discord que permite ejecutar comandos en el sistema donde se ejecuta de maneta totalmente remota.",
         proj_chat: "Secure Chat",
         desc_chat: "Aplicación de mensajería cifrada de extremo a extremo.",
         proj_cloud: "Cloud Manager",
@@ -42,7 +42,9 @@ const translations = {
         btn_email: "Enviar Email",
         btn_copy: "Copiar Email",
         toast_email_copied: "¡Correo electrónico copiado al portapapeles!",
-        footer_rights: "Todos los derechos reservados."
+        footer_rights: "Todos los derechos reservados.",
+        btn_show_more: "Mostrar más proyectos",
+        nav_all_projects: "Todos los proyectos"
     },
     en: {
         nav_home: "Home",
@@ -71,8 +73,8 @@ const translations = {
         cat_devops: "DevOps & Systems",
         cat_tools: "Tools",
         projects_title: "Executed Protocols",
-        proj_network: "Network Sentinel",
-        desc_network: "Real-time network monitoring system built with Python and Websockets.",
+        proj_bot: "Discord Bot Shell",
+        desc_bot: "Discord bot that allows executing commands on the system where it is running remotely.",
         proj_chat: "Secure Chat",
         desc_chat: "End-to-end encrypted messaging application.",
         proj_cloud: "Cloud Manager",
@@ -87,6 +89,8 @@ const translations = {
         btn_email: "Send Email",
         btn_copy: "Copy Email",
         toast_email_copied: "Email copied to clipboard!",
-        footer_rights: "All rights reserved."
+        footer_rights: "All rights reserved.",
+        btn_show_more: "Show more projects",
+        nav_all_projects: "All Projects"
     }
 };

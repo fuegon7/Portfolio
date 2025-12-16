@@ -27,8 +27,9 @@
                 <li><a href="#home" data-i18n="nav_home"></a></li>
                 <li><a href="#about" data-i18n="nav_about"></a></li>
                 <li><a href="#skills" data-i18n="nav_skills"></a></li>
-                <li><a href="#projects" data-i18n="nav_projects"></a></li>
-                <li><a href="#contact" data-i18n="nav_contact"></a></li>
+                <li><a href="index.html#projects" data-i18n="nav_projects"></a></li>
+                <li><a href="projects.html" data-i18n="nav_all_projects"></a></li>
+                <li><a href="index.html#contact" data-i18n="nav_contact"></a></li>
             </ul>
             <div class="nav-controls">
                 <div class="lang-switch-wrapper">
@@ -180,36 +181,33 @@
         <h2 class="section-title" data-i18n="projects_title">Executed Protocols</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);"></div>
+                <div class="project-image" style="background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);"></div>
                 <div class="project-content">
-                    <h3 data-i18n="proj_network">Network Sentinel</h3>
-                    <p data-i18n="desc_network">Sistema de monitoreo de red en tiempo real construido con Python y
-                        Websockets.</p>
+                    <h3 data-i18n="proj_ai">AIGN7</h3>
+                    <p data-i18n="desc_ai">IA completamente local creada apartir de un modelo de lenguaje compatible con
+                        llama.cpp. Actualmente trabajando en mejorar su interactividad con el usuario.</p>
                     <div class="project-tags">
-                        <span>Python</span>
-                        <span>Socket.io</span>
-                        <span>Redis</span>
+                        <span>Python,</span>
+                        <span>llama.cpp,</span>
+                        <span>Gradio</span>
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#">Repo</a>
-                    <a href="#">Demo</a>
+                    <a href="https://github.com/fuegon7/AIGN7">Repo</a>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);"></div>
+                <div class="project-image" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);"></div>
                 <div class="project-content">
-                    <h3 data-i18n="proj_chat">Secure Chat</h3>
-                    <p data-i18n="desc_chat">Aplicación de mensajería cifrada de extremo a extremo.</p>
+                    <h3 data-i18n="proj_bot"></h3>
+                    <p data-i18n="desc_bot"></p>
                     <div class="project-tags">
-                        <span>Node.js</span>
-                        <span>React</span>
-                        <span>Socket.io</span>
+                        <span>Python,</span>
+                        <span>Discord</span>
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#">Repo</a>
-                    <a href="#">Demo</a>
+                    <a href="https://github.com/fuegon7/DiscordBotShell">Repo</a>
                 </div>
             </div>
             <div class="project-card">
@@ -220,6 +218,7 @@
                     <p data-i18n="desc_cloud">Dashboard para gestión de instancias VPS automatizada.</p>
                     <div class="project-tags">
                         <span>Vue.js</span>
+                        <span>Node.js</span>
                         <span>AWS API</span>
                         <span>Firebase</span>
                     </div>
@@ -229,6 +228,16 @@
                     <a href="#">Demo</a>
                 </div>
             </div>
+        </div>
+        <div class="show-more-container">
+            <a href="projects.html" class="show-more-btn">
+                <span data-i18n="btn_show_more"></span>
+                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </div>
     </section>
 

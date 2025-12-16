@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             langToggleCheck.checked = false;
         }
         updateLanguage(currentLang);
+        updateActiveNavLink();
     }
 
     // --- FUNCTIONS ---
@@ -137,8 +138,54 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
+    // --- NAVIGATION ACTIVE STATE ---
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const scrollPosition = window.scrollY + 100; // Offset for header
+
+        // If we are on projects.html, highlight All Projects
+        if (window.location.pathname.includes('projects.html')) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href').includes('projects.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            return;
+        }
+
+        // Home Page Scroll Spy
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            // Check if link points to index.html#id or just #id
+            if (href.includes(currentSection) && currentSection !== '') {
+                // Determine if it's strictly a home link when on home page
+                if (!href.includes('projects.html')) {
+                    link.classList.add('active');
+                }
+            } else if (currentSection === '' && window.scrollY < 100 && (href === '#home' || href.endsWith('#home'))) {
+                link.classList.add('active'); // Default to home at top
+            }
+        });
+    }
+
     // Run Init
     init();
+
+    // Listen to scroll for active state
+    window.addEventListener('scroll', updateActiveNavLink);
 
     // --- MOBILE MENU ---
     const mobileBtn = document.querySelector('.mobile-menu-btn');
