@@ -588,12 +588,12 @@ section {
 }
 
 .project-image {
-    flex: 1;
-    min-height: 120px;
+    height: 200px;
     width: 100%;
     position: relative;
     background-size: cover;
     background-position: center;
+    flex-shrink: 0;
 }
 
 .project-image::after {
