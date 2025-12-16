@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - SysAdmin & FullStack Developer</title>
+    <title>gerard@portfolio:~$</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,17 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">gerard@portfolio:~$</div>
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav_home">Inicio</a></li>
-                <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
-                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-                <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><a href="#home" data-i18n="nav_home"></a></li>
+                <li><a href="#about" data-i18n="nav_about"></a></li>
+                <li><a href="#skills" data-i18n="nav_skills"></a></li>
+                <li><a href="#projects" data-i18n="nav_projects"></a></li>
+                <li><a href="#contact" data-i18n="nav_contact"></a></li>
             </ul>
             <div class="nav-controls">
                 <div class="lang-switch-wrapper">
@@ -44,16 +49,14 @@
         <div class="hero-bg"></div>
 
         <div class="hero-content">
-            <h1 class="glitch" data-text="Gerard Moreno Campos" data-i18n="hero_title">Gerard Moreno Campos</h1>
+            <h1 class="glitch" data-text="Gerard Moreno Campos" data-i18n="hero_title"></h1>
             <p class="subtitle">
-                <span class="typing-effect" data-i18n="hero_subtitle">FullStack Developer & SysAdmin</span>
+                <span class="typing-effect" data-i18n="hero_subtitle"></span>
             </p>
-            <p class="hero-description" data-i18n="hero_desc">
-                > Dominando servidores, redes y código desde el terminal_
-            </p>
+            <p class="hero-description" data-i18n="hero_desc"></p>
             <div class="hero-buttons">
-                <a href="#about" class="cta-button" data-i18n="hero_cta">Explorar Perfil</a>
-                <a href="#contact" class="cta-button secondary" data-i18n="hero_contact">Contactar</a>
+                <a href="#about" class="cta-button" data-i18n="hero_cta"></a>
+                <a href="#contact" class="cta-button secondary" data-i18n="hero_contact"></a>
             </div>
         </div>
         <div class="scroll-indicator">▼ SCROLL</div>
@@ -61,16 +64,12 @@
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title" data-i18n="about_title">whoami</h2>
+        <h2 class="section-title" data-i18n="about_title"></h2>
         <div class="about-content">
             <div class="profile-card">
                 <div class="profile-img"></div>
-                <h3 class="profile-title" data-i18n="profile_title">
-                    System Administrator
-                </h3>
-                <p class="profile-quote" data-i18n="profile_quote">
-                    "En el mundo digital, cada línea de código cuenta y cada servidor importa."
-                </p>
+                <h3 class="profile-title" data-i18n="profile_title"></h3>
+                <p class="profile-quote" data-i18n="profile_quote"></p>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -89,43 +88,35 @@
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
+                    <a href="javascript:void(0)" class="social-link" aria-label="Email" id="email-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                             </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
+                    <div id="toast-container"></div>
                 </div>
             </div>
             <div class="about-text">
-                <p data-i18n="about_p1">
-                    Soy un apasionado administrador de sistemas y desarrollador fullstack con años de experiencia
-                    en la gestión de infraestructuras críticas y el desarrollo de aplicaciones robustas.
-                </p>
-                <p data-i18n="about_p2">
-                    Mi expertise abarca desde la configuración y mantenimiento de servidores Linux hasta el
-                    desarrollo de aplicaciones web completas. Me especializo en automatización, seguridad
-                    de redes y arquitecturas escalables.
-                </p>
-                <p data-i18n="about_p3">
-                    Cuando no estoy optimizando sistemas o escribiendo código, me encontrarás explorando
-                    nuevas tecnologías, contribuyendo a proyectos open source o investigando sobre
-                    ciberseguridad.
-                </p>
+                <p data-i18n="about_p1"></p>
+                <p data-i18n="about_p2"></p>
+                <p data-i18n="about_p3"></p>
+                <p data-i18n="about_p4"></p>
                 <div class="experience-grid">
                     <div class="experience-item">
-                        <div class="exp-number">5+</div>
-                        <div class="exp-text" data-i18n="exp_years">Años de experiencia</div>
+                        <div class="exp-number">3+</div>
+                        <div class="exp-text" data-i18n="exp_years"></div>
                     </div>
                     <div class="experience-item">
-                        <div class="exp-number">50+</div>
-                        <div class="exp-text" data-i18n="exp_projects">Proyectos completados</div>
+                        <div class="exp-number">10+</div>
+                        <div class="exp-text" data-i18n="exp_projects"></div>
                     </div>
                     <div class="experience-item">
                         <div class="exp-number">100%</div>
-                        <div class="exp-text" data-i18n="exp_satisfaction">Satisfacción clientes</div>
+                        <div class="exp-text" data-i18n="exp_motivation"></div>
                     </div>
                 </div>
             </div>
@@ -134,45 +125,51 @@
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title" data-i18n="skills_title">Initial Abilities</h2>
+        <h2 class="section-title" data-i18n="skills_title"></h2>
         <div class="skills-container">
             <div class="skill-category">
-                <h3 data-i18n="cat_frontend">Frontend</h3>
+                <h3 data-i18n="cat_frontend"></h3>
                 <div class="skill-tags">
                     <span>HTML5</span>
                     <span>CSS3</span>
                     <span>JavaScript (ES6+)</span>
-                    <span>React</span>
+                    <span>Vue</span>
+                    <span>React Native</span>
                     <span>Tailwind</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3 data-i18n="cat_backend">Backend</h3>
+                <h3 data-i18n="cat_backend"></h3>
                 <div class="skill-tags">
                     <span>Node.js</span>
                     <span>Python</span>
-                    <span>PHP</span>
-                    <span>SQL</span>
-                    <span>MongoDB</span>
+                    <span>Symfony</span>
+                    <span>Laravel</span>
+                    <span>MySQL</span>
+                    <span>PostgreSQL</span>
+                    <span>SQLite</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3 data-i18n="cat_devops">DevOps & Systems</h3>
+                <h3 data-i18n="cat_devops"></h3>
                 <div class="skill-tags">
                     <span>Linux</span>
+                    <span>Windows</span>
                     <span>Docker</span>
-                    <span>AWS</span>
-                    <span>Nginx</span>
+                    <span>VirtualBox</span>
                     <span>Bash Scripting</span>
+                    <span data-i18n="skill_cloud"></span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3 data-i18n="cat_tools">Tools</h3>
+                <h3 data-i18n="cat_tools"></h3>
                 <div class="skill-tags">
                     <span>Git</span>
                     <span>VS Code</span>
                     <span>Figma</span>
                     <span>Postman</span>
+                    <span>Google App Script</span>
+                    <span>Makefiles</span>
                 </div>
             </div>
         </div>
@@ -237,39 +234,38 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title" data-i18n="contact_title">Establish Connection</h2>
+        <h2 class="section-title" data-i18n="contact_title"></h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3 data-i18n="contact_subtitle">¿Listo para colaborar?</h3>
-                <p data-i18n="contact_text">Estoy disponible para proyectos freelance y oportunidades full-time. Envíame
-                    un mensaje y te responderé lo antes posible.</p>
+                <h3 data-i18n="contact_subtitle"></h3>
+                <p data-i18n="contact_text"></p>
                 <div class="contact-methods">
                     <div class="method">
                         <span class="method-icon">✉</span>
-                        <span>gerard@example.com</span>
+                        <span>gerard.moreno.campos@gmail.com</span>
                     </div>
                     <div class="method">
                         <span class="method-icon">📍</span>
-                        <span>Barcelona, España</span>
+                        <span data-i18n="contact_location"></span>
                     </div>
                 </div>
             </div>
-            <!-- Contact form restored for GAS integration -->
+            <!-- Contact form with GAS integration -->
             <form class="contact-form" id="contact-form" method="POST">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required placeholder=" ">
-                    <label for="name">Nombre</label>
+                    <label for="name" data-i18n="name"></label>
                 </div>
                 <div class="form-group">
                     <input type="email" id="email" name="email" required placeholder=" ">
-                    <label for="email">Email</label>
+                    <label for="email" data-i18n="email"></label>
                 </div>
                 <div class="form-group">
                     <textarea id="message" name="message" required placeholder=" "></textarea>
-                    <label for="message">Mensaje</label>
+                    <label for="message" data-i18n="message"></label>
                 </div>
                 <button type="submit" class="submit-btn">
-                    <span data-i18n="btn_email">Enviar Mensaje</span>
+                    <span data-i18n="btn_email"></span>
                     <span class="btn-glitch"></span>
                 </button>
             </form>
@@ -281,15 +277,14 @@
         <div class="footer-content">
             <div class="footer-logo">gerard@portfolio:~$</div>
             <div class="footer-links">
-                <a href="#home" data-i18n="nav_home">Inicio</a>
-                <a href="#about" data-i18n="nav_about">Sobre mí</a>
-                <a href="#skills" data-i18n="nav_skills">Skills</a>
-                <a href="#projects" data-i18n="nav_projects">Proyectos</a>
-                <a href="#contact" data-i18n="nav_contact">Contacto</a>
+                <a href="#home" data-i18n="nav_home"></a>
+                <a href="#about" data-i18n="nav_about"></a>
+                <a href="#skills" data-i18n="nav_skills"></a>
+                <a href="#projects" data-i18n="nav_projects"></a>
+                <a href="#contact" data-i18n="nav_contact"></a>
             </div>
             <div class="footer-copyright">
-                &copy; <span id="current-year"></span> <span data-i18n="footer_rights">Todos los derechos
-                    reservados.</span>
+                &copy; <span id="current-year"></span> <span data-i18n="footer_rights"></span>
             </div>
         </div>
     </footer>
