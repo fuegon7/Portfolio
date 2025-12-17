@@ -77,18 +77,31 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch(scriptURL, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors'
             })
             .then(() => {
-                // In no-cors mode we assume success if no error is thrown
                 btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
                 submitBtn.classList.add('success');
                 contactForm.reset();
             })
-            .catch(() => {
-                btnTextSpan.textContent = currentLang === 'es'
-                    ? 'Error, inténtalo'
-                    : 'Error, try again';
+            .then(data => {
+                if (data.status === 'rate_limited') {
+                    throw new Error('Rate limited');
+                }
+
+                if (data.status !== 'success') {
+                    throw new Error('Error');
+                }
+            })
+            .catch(err => {
+                if (err.message === 'rate_limited') {
+                    btnTextSpan.textContent = currentLang === 'es'
+                        ? 'Espera unos segundos antes de reenviar'
+                        : 'Please wait before sending again';
+                } else {
+                    btnTextSpan.textContent = currentLang === 'es'
+            ? 'Error al enviar'
+            : 'Send error';
+    }
                 submitBtn.classList.add('error');
             })
             .finally(() => {
