@@ -52,42 +52,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Contact Form Submission (For GAS)
+    // Contact Form Submission (Google Apps Script)
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.querySelector('span[data-i18n]').textContent;
             const btnTextSpan = submitBtn.querySelector('span[data-i18n]');
+            const originalText = translations[currentLang]['btn_email'];
 
-            // Loading State
-            btnTextSpan.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+            // Prevent double submit
+            if (submitBtn.classList.contains('loading')) return;
+
+            submitBtn.classList.add('loading');
             submitBtn.style.opacity = '0.7';
+            btnTextSpan.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
 
             // --- GOOGLE APPS SCRIPT INTEGRATION ---
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzA_q_dUNeRPAqNVpmHtkNVNQYiE7cYtoc_EyIky1-R83OADKGZNeX7Uyq8D5KxNOb2NQ/exec';
-            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm), mode: 'no-cors' })
-                .then(() => {
-                    // Response is opaque in no-cors mode, so we assume success if it doesn't throw
-                    console.log('Form submitted (opaque response)');
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                });
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyz__SL1UpBOZqHlLYYkJQDxT0NxEo_0q9wSJNtex_5Um2XQ-BsMDBdH6oQ-v-JLH97GQ/exec';
 
-            // Simulation for now
-            setTimeout(() => {
+            const formData = new FormData(contactForm);
+            formData.append('token', 'CONTACT_V1_2025'); // anti-bot token
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // In no-cors mode we assume success if no error is thrown
                 btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
                 submitBtn.classList.add('success');
                 contactForm.reset();
-
+            })
+            .catch(() => {
+                btnTextSpan.textContent = currentLang === 'es'
+                    ? 'Error, inténtalo'
+                    : 'Error, try again';
+                submitBtn.classList.add('error');
+            })
+            .finally(() => {
                 setTimeout(() => {
-                    btnTextSpan.textContent = translations[currentLang]['btn_email'];
-                    submitBtn.classList.remove('success');
+                    submitBtn.classList.remove('loading', 'success', 'error');
                     submitBtn.style.opacity = '1';
+                    btnTextSpan.textContent = originalText;
                 }, 3000);
-            }, 1500);
+            });
         });
     }
 
