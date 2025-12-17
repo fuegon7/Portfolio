@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch(scriptURL, {
                 method: 'POST',
                 body: formData,
+                mode: 'no-cors',
             })
             .then(() => {
                 btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
