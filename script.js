@@ -67,10 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // --- GOOGLE APPS SCRIPT INTEGRATION ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzA_q_dUNeRPAqNVpmHtkNVNQYiE7cYtoc_EyIky1-R83OADKGZNeX7Uyq8D5KxNOb2NQ/exec';
-            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm) })
-                .then(response => {
-                    console.log(response);
+            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm), mode: 'no-cors' })
+                .then(() => {
+                    // Response is opaque in no-cors mode, so we assume success if it doesn't throw
+                    console.log('Form submitted (opaque response)');
                 })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                });
 
             // Simulation for now
             setTimeout(() => {
