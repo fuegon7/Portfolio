@@ -233,8 +233,63 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- MASONRY LAYOUT (Horizontal Order) ---
+    function initMasonry() {
+        const grids = document.querySelectorAll('.masonry-grid');
+
+        grids.forEach(grid => {
+            // Save original cards to keep order 1, 2, 3...
+            if (!grid.originalCards) {
+                // If cards are already inside columns (re-run), we might lose order if we just querySelectorAll.
+                // But initMasonry is called on load first, so it captures them.
+                // If we resize, we use the cached .originalCards.
+                // To be safe against race conditions or multiple inits, check children.
+                const currentCards = Array.from(grid.querySelectorAll('.project-card'));
+                if (currentCards.length > 0 && !grid.querySelector('.masonry-col')) {
+                    grid.originalCards = currentCards;
+                }
+            }
+
+            // If still no originalCards (e.g. empty grid), skip
+            if (!grid.originalCards) return;
+
+            const cards = grid.originalCards;
+
+            // Determine columns based on CSS breakpoints matching styles.css
+            const width = window.innerWidth;
+            let colCount = 3;
+            if (width <= 768) colCount = 1;
+            else if (width <= 1024) colCount = 2;
+
+            // Create columns
+            const cols = [];
+            for (let i = 0; i < colCount; i++) {
+                const col = document.createElement('div');
+                col.className = 'masonry-col';
+                cols.push(col);
+            }
+
+            // Distribute cards (Horizontal Order: 1->Col1, 2->Col2, 3->Col3...)
+            cards.forEach((card, index) => {
+                cols[index % colCount].appendChild(card);
+            });
+
+            // Rebuild DOM
+            grid.innerHTML = '';
+            cols.forEach(col => grid.appendChild(col));
+        });
+    }
+
+    // Debounce resize for Masonry
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initMasonry, 200);
+    });
+
     // Run Init
     init();
+    initMasonry();
 
     // Listen to scroll for active state
     window.addEventListener('scroll', updateActiveNavLink);
