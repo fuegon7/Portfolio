@@ -78,29 +78,63 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: formData,
                 mode: 'no-cors'
             })
-            .then(() => {
-                btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
-                submitBtn.classList.add('success');
-                contactForm.reset();
+                .then(() => {
+                    btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
+                    submitBtn.classList.add('success');
+                    contactForm.reset();
 
-                submitBtn.disabled = true;
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                }, 30000);
-            })
-            .catch(() => {
-                btnTextSpan.textContent = currentLang === 'es'
-                    ? 'Error al enviar'
-                    : 'Send error';
-                submitBtn.classList.add('error');
-            })
-            .finally(() => {
-                setTimeout(() => {
-                    submitBtn.classList.remove('loading', 'success', 'error');
-                    submitBtn.style.opacity = '1';
-                    btnTextSpan.textContent = originalText;
-                }, 3000);
-            });
+                    // Start Cooldown
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('cooldown');
+                    submitBtn.classList.remove('loading'); // remove loading immediately
+
+                    let timeLeft = 30;
+
+                    // Initial wait text after "Sent!" message
+                    setTimeout(() => {
+                        if (submitBtn.classList.contains('success')) {
+                            submitBtn.classList.remove('success');
+                        }
+                        updateButtonTimer();
+                    }, 2000);
+
+                    const timerInterval = setInterval(() => {
+                        timeLeft--;
+                        if (timeLeft <= 0) {
+                            clearInterval(timerInterval);
+                        } else {
+                            updateButtonTimer();
+                        }
+                    }, 1000);
+
+                    function updateButtonTimer() {
+                        btnTextSpan.textContent = currentLang === 'es'
+                            ? `Espere ${timeLeft}s...`
+                            : `Wait ${timeLeft}s...`;
+                    }
+
+                    setTimeout(() => {
+                        clearInterval(timerInterval);
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('cooldown');
+                        submitBtn.style.opacity = '1';
+                        btnTextSpan.textContent = originalText;
+                    }, 30000);
+                })
+                .catch(() => {
+                    btnTextSpan.textContent = currentLang === 'es'
+                        ? 'Error al enviar'
+                        : 'Send error';
+                    submitBtn.classList.add('error');
+
+                    // Reset error state after 3s
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading', 'error');
+                        submitBtn.style.opacity = '1';
+                        btnTextSpan.textContent = originalText;
+                    }, 3000);
+                });
+            // Removed finally block as logic is handled in then/catch
         });
     }
 

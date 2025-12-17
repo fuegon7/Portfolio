@@ -864,6 +864,34 @@ section {
     box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
 }
 
+.submit-btn.cooldown {
+    cursor: not-allowed;
+    opacity: 0.7;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn.cooldown::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--primary-cyan);
+    width: 100%;
+    animation: cooldown 30s linear forwards;
+}
+
+@keyframes cooldown {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
 
