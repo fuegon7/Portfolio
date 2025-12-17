@@ -68,41 +68,30 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.style.opacity = '0.7';
             btnTextSpan.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
 
-            // --- GOOGLE APPS SCRIPT INTEGRATION ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyz__SL1UpBOZqHlLYYkJQDxT0NxEo_0q9wSJNtex_5Um2XQ-BsMDBdH6oQ-v-JLH97GQ/exec';
 
             const formData = new FormData(contactForm);
-            formData.append('token', 'CONTACT_V1_2025'); // anti-bot token
+            formData.append('token', 'CONTACT_V1_2025');
 
             fetch(scriptURL, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors',
+                mode: 'no-cors'
             })
             .then(() => {
                 btnTextSpan.textContent = currentLang === 'es' ? '¡Enviado!' : 'Sent!';
                 submitBtn.classList.add('success');
                 contactForm.reset();
-            })
-            .then(data => {
-                if (data.status === 'rate_limited') {
-                    throw new Error('Rate limited');
-                }
 
-                if (data.status !== 'success') {
-                    throw new Error('Error');
-                }
+                submitBtn.disabled = true;
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                }, 30000);
             })
-            .catch(err => {
-                if (err.message === 'rate_limited') {
-                    btnTextSpan.textContent = currentLang === 'es'
-                        ? 'Espera unos segundos antes de reenviar'
-                        : 'Please wait before sending again';
-                } else {
-                    btnTextSpan.textContent = currentLang === 'es'
-            ? 'Error al enviar'
-            : 'Send error';
-    }
+            .catch(() => {
+                btnTextSpan.textContent = currentLang === 'es'
+                    ? 'Error al enviar'
+                    : 'Send error';
                 submitBtn.classList.add('error');
             })
             .finally(() => {
@@ -114,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
 
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
