@@ -48,18 +48,17 @@
     <section id="projects-page" style="padding-top: 120px; min-height: 100vh;">
         <h2 class="section-title" data-i18n="nav_projects">Proyectos</h2>
         <div class="masonry-grid">
-            <!-- Project 1: AIGN7 -->
+            <!-- Project: AIGN7 -->
             <div class="project-card">
                 <div class="project-image"
                     style="background-image: url('assets/images/AIGN7.webp'); background-size: cover; background-position: center;">
+                    <span class="project-category cat-personal" data-i18n="cat_personal"></span>
                 </div>
                 <div class="project-content">
                     <h3 data-i18n="proj_AIGN7"></h3>
                     <p data-i18n="desc_AIGN7"></p>
                     <div class="project-tags">
-                        <span>Python</span>
-                        <span>llama.cpp</span>
-                        <span>Gradio</span>
+                        <span>Python, llama.cpp, Gradio</span>
                     </div>
                 </div>
                 <div class="project-links">
@@ -67,16 +66,16 @@
                 </div>
             </div>
 
-            <!-- Project 2: android-intranet (PRIVATE) -->
+            <!-- Project: android-intranet (PRIVATE) -->
             <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);"></div>
+                <div class="project-image" style="background: linear-gradient(135deg, #556b2f 0%, #808000 100%);">
+                    <span class="project-category cat-business" data-i18n="cat_business"></span>
+                </div>
                 <div class="project-content">
                     <h3 data-i18n="proj_android_intranet"></h3>
                     <p data-i18n="desc_android_intranet"></p>
                     <div class="project-tags">
-                        <span>Java</span>
-                        <span>Android SDK</span>
-                        <span>Firebase</span>
+                        <span>React Native, Expo, TypeScript, i18n</span>
                     </div>
                 </div>
                 <div class="project-links">
@@ -84,33 +83,35 @@
                 </div>
             </div>
 
-            <!-- Project 3: web-scrapping-tool -->
+            <!-- Project: web-scrapping-tool -->
             <div class="project-card">
-                <div class="project-image" style="background-image: url('assets/images/WebScrapingTool.webp');"></div>
+                <div class="project-image" style="background-image: url('assets/images/WebScrapingTool.webp');">
+                    <span class="project-category cat-business" data-i18n="cat_business"></span>
+                </div>
                 <div class="project-content">
-                    <h3 data-i18n="proj_web"></h3>
-                    <p data-i18n="desc_web"></p>
+                    <h3 data-i18n="proj_web_scrapping"></h3>
+                    <p data-i18n="desc_web_scrapping"></p>
                     <div class="project-tags">
-                        <span>Python</span>
-                        <span>BeautifulSoup</span>
+                        <span>Python, BeautifulSoup</span>
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/fuegon7/web-scrapping-tool">Repo</a>
+                    <a href="#" class="private-repo">Repo</a>
                 </div>
             </div>
 
-            <!-- Project 4: DiscordBotShell -->
+            <!-- Project: DiscordBotShell -->
             <div class="project-card">
                 <div class="project-image"
                     style="background-image: url('assets/images/DiscordBotShell.webp'); background-size: cover; background-position: center;">
+                    <span class="project-category cat-personal" data-i18n="cat_personal"></span>
                 </div>
                 <div class="project-content">
                     <h3 data-i18n="proj_bot"></h3>
                     <p data-i18n="desc_bot"></p>
                     <div class="project-tags">
                         <span>Python</span>
-                        <span>Discord.py</span>
+                        <span>Discord</span>
                     </div>
                 </div>
                 <div class="project-links">
@@ -118,60 +119,58 @@
                 </div>
             </div>
 
-            <!-- Project 5: CC--Tweaked-LinkIt -->
+            <!-- Project: CC--Tweaked-LinkIt -->
             <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);"></div>
+                <div class="project-image" style="background: linear-gradient(135deg, #5d9948 0%, #386b2c 100%);">
+                    <span class="project-category cat-personal" data-i18n="cat_personal"></span>
+                </div>
                 <div class="project-content">
-                    <h3>CC--Tweaked-LinkIt</h3>
-                    <p>Interconexión y automatización avanzada para ComputerCraft.</p>
+                    <h3 data-i18n="proj_CC_Tweaked_LinkIt"></h3>
+                    <p data-i18n="desc_CC_Tweaked_LinkIt"></p>
                     <div class="project-tags">
-                        <span>Lua</span>
-                        <span>Minecraft</span>
+                        <span>Lua, Minecraft, ComputerCraft</span>
                     </div>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/fuegon7/CC--Tweaked-LinkIt">Repo</a>
                 </div>
             </div>
-        </div>
 
-        <section id="school-projects" style="margin-top: 6rem;">
-            <h2 class="section-title">Proyectos Escolares</h2>
-            <div class="masonry-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #2c3e50 0%, #bdc3c7 100%);">
-                    </div>
-                    <div class="project-content">
-                        <h3>Gestión de Biblioteca</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore.</p>
-                        <div class="project-tags">
-                            <span>Java</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">Repo</a>
+            <!-- Project: HiveMind -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('assets/images/HiveMind.webp');">
+                    <span class="project-category cat-school" data-i18n="cat_school"></span>
+                </div>
+                <div class="project-content">
+                    <h3 data-i18n="proj_HiveMind"></h3>
+                    <p data-i18n="desc_HiveMind"></p>
+                    <div class="project-tags">
+                        <span>Laravel, Composer, shell, MySQL/SQLite, Vue, TailwindCSS, Cloud</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema de Reservas</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.</p>
-                        <div class="project-tags">
-                            <span>PHP</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">Repo</a>
-                    </div>
+                <div class="project-links">
+                    <a href="https://github.com/gerardmoreno123/p2-g6-hivemind-app-deploy">Repo</a>
                 </div>
             </div>
-        </section>
+
+            <!-- Project: The Hollow Hood -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('assets/images/HollowHood.webp');">
+                    <span class="project-category cat-school" data-i18n="cat_school"></span>
+                </div>
+                <div class="project-content">
+                    <h3 data-i18n="proj_HollowHood"></h3>
+                    <p data-i18n="desc_HollowHood"></p>
+                    <div class="project-tags">
+                        <span>JavaScript, HTML, Phaser </span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/gerardmoreno123/MP08-UF3-Phaser">Repo</a>
+                    <a href="https://gerardmoreno123.github.io/MP08-UF3-Phaser/">Demo</a>
+                </div>
+            </div>
+        </div>
 
         <div style="text-align: center; margin: 4rem 0;">
             <a href="index.html" class="cta-button" data-i18n="nav_home">Inicio</a>
@@ -187,6 +186,7 @@
                 <a href="index.html#about" data-i18n="nav_about"></a>
                 <a href="index.html#skills" data-i18n="nav_skills"></a>
                 <a href="index.html#projects" data-i18n="nav_projects"></a>
+                <a href="projects.html" data-i18n="nav_all_projects"></a>
                 <a href="index.html#contact" data-i18n="nav_contact"></a>
             </div>
             <div class="footer-copyright">

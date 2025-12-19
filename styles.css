@@ -604,6 +604,40 @@ section {
     flex-shrink: 0;
 }
 
+.project-category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cat-personal {
+    background: rgba(18, 18, 18, 0.9);
+    color: var(--primary-cyan);
+    border: 1px solid rgba(100, 255, 218, 0.5);
+}
+
+.cat-business {
+    background: rgba(18, 18, 18, 0.9);
+    color: var(--secondary-purple);
+    border: 1px solid rgba(187, 134, 252, 0.5);
+}
+
+.cat-school {
+    background: rgba(18, 18, 18, 0.9);
+    color: var(--accent-pink);
+    border: 1px solid rgba(207, 102, 121, 0.5);
+}
+
 .project-image::after {
     content: '';
     position: absolute;
@@ -1234,4 +1268,11 @@ footer {
 .toast-message::before {
     content: '✓';
     font-weight: bold;
+}
+
+/* Specific layout for project cards on the main page to align buttons at the bottom */
+#projects .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

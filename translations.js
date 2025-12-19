@@ -30,8 +30,16 @@ const translations = {
         desc_AIGN7: "IA completamente local creada apartir de un modelo de lenguaje compatible con llama.cpp. Actualmente trabajando en mejorar su interactividad con el usuario.",
         proj_bot: "Discord Bot Shell",
         desc_bot: "Bot de Discord que permite ejecutar comandos en el sistema donde se ejecuta de maneta totalmente remota.",
-        proj_web: "Web Scrapping Tool",
-        desc_web: "Script de python que realiza web scraping de ciertos sitios web para extraer ciertos datos y guardarlos en un archivo csv.",
+        proj_web_scrapping: "Web Scrapping Tool",
+        desc_web_scrapping: "Herramienta de web scraping desarrollada para un caso de uso empresarial específico con el objetivo de detectar ofertas de empleo fraudulentas.\nEstá planificada una refactorización para desacoplar el proyecto de las restricciones propias de la empresa y mejorar su reutilización en casos de uso más amplios y personales.",
+        proj_CC_Tweaked_LinkIt: "CC-Tweaked LinkIt",
+        desc_CC_Tweaked_LinkIt: "Mini proyecto echo en Minecraft a partir del mod ComputerCraft. Detección y conexión con máquinas del mod Mekanism.",
+        proj_android_intranet: "Android Intranet",
+        desc_android_intranet: "Aplicación Android personalizada que digitaliza uno de los procesos principales de la empresa.",
+        proj_HiveMind: "HiveMind",
+        desc_HiveMind: "Red social desarrollada en Laravel y Vue. Contribuí principalmente al backend, desarrollando funcionalidades clave, arreglando bugs y creando el script de instalación y arranque de servidores. ",
+        proj_HollowHood: "The Hollow Hood",
+        desc_HollowHood: "Juego 2D interactivo desarrollado en Phaser, con animaciones fluidas y pequeñas funcionalidades experimentales",
         contact_title: "Establecer Conexión",
         contact_subtitle: "¿Listo para colaborar?",
         contact_text: "Estoy disponible para proyectos freelance y oportunidades full-time. Envíame un mensaje y te responderé lo antes posible.",
@@ -40,11 +48,13 @@ const translations = {
         email: "Email",
         message: "Mensaje",
         btn_email: "Enviar Email",
-
         toast_email_copied: "¡Correo electrónico copiado al portapapeles!",
         footer_rights: "Todos los derechos reservados.",
         btn_show_more: "Mostrar más proyectos",
-        nav_all_projects: "Todos los proyectos"
+        nav_all_projects: "Todos los proyectos",
+        cat_personal: "Personal",
+        cat_business: "Empresarial",
+        cat_school: "Escolar"
     },
     en: {
         nav_home: "Home",
@@ -65,7 +75,6 @@ const translations = {
         about_p3: "Besides technology, I am interested in philosophy, speleology, cycling, and working on several projects, which stimulates my creativity and curiosity, keeping me motivated to continue growing.",
         exp_years: "Years of Experience",
         exp_projects: "Projects Completed",
-
         exp_motivation: "Motivation",
         skills_title: "Initial Abilities",
         skill_cloud: "Basic Cloud",
@@ -78,8 +87,16 @@ const translations = {
         desc_AIGN7: "Local AI created from a language model compatible with llama.cpp. Currently working on improving user interaction.",
         proj_bot: "Discord Bot Shell",
         desc_bot: "Discord bot that allows executing commands on the system where it is running remotely.",
-        proj_web: "Web Scrapping Tool",
-        desc_web: "Python script that scrapes certain websites to extract data and save it in a csv file.",
+        proj_web_scrapping: "Web Scrapping Tool",
+        desc_web_scrapping: "Custom web scraping tool developed for a specific business use case to detect fraudulent job listings.\nA planned refactor will decouple the project from company-specific constraints and improve reusability for broader, personal use cases.",
+        proj_CC_Tweaked_LinkIt: "CC-Tweaked LinkIt",
+        desc_CC_Tweaked_LinkIt: "Mini project made in Minecraft from the mod ComputerCraft. Detection and connection with machines from the mod Mekanism.",
+        proj_android_intranet: "Android Intranet",
+        desc_android_intranet: "Custom Android application that digitalizes one of the main processes of the company.",
+        proj_HiveMind: "HiveMind",
+        desc_HiveMind: "Social network developed with Laravel and Vue. Mainly contributed to the backend, developing key features, fixing bugs and creating the server installation and startup scripts.",
+        proj_HollowHood: "The Hollow Hood",
+        desc_HollowHood: "Interactive 2D game developed with Phaser, featuring smooth animations and experimental features.",
         contact_title: "Establish Connection",
         contact_subtitle: "Ready to collaborate?",
         contact_text: "I am available for freelance projects and full-time opportunities. Send me a message and I will reply as soon as possible.",
@@ -88,10 +105,12 @@ const translations = {
         email: "Email",
         message: "Message",
         btn_email: "Send Email",
-
         toast_email_copied: "Email copied to clipboard!",
         footer_rights: "All rights reserved.",
         btn_show_more: "Show more projects",
-        nav_all_projects: "All Projects"
+        nav_all_projects: "All Projects",
+        cat_personal: "Personal",
+        cat_business: "Business",
+        cat_school: "School"
     }
 };
